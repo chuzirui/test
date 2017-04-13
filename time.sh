@@ -9,7 +9,7 @@ grep '20[1-2][0-9]' test.txt | sort | uniq >> $FILE
 cat $FILE | cut -f 2 -d ";" > vtm-lb.list
 neutron lbaas-loadbalancer-list | grep ACTIVE | cut -f 2 -d "|" > lb.list
 for a in $(cat vtm-lb.list | sort | uniq) ; do sed -i "/$a/d" lb.list; done
-for a in $(cat vtm-lb.list); do echo "$now2;$a;1;0;0;0;0;0;0;0" >>$FILE; done 
+for a in $(cat lb.list); do echo "$now2;$a;1;0;0;0;0;0;0;0" >>$FILE; done 
 HOST='172.20.41.3'
 USER='ftpuser'
 PASSWD='e#Vg_1B7ln'
