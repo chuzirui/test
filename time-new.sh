@@ -9,7 +9,7 @@ HOST='172.20.41.3'
 USER='ftpuser'
 PASSWD='e#Vg_1B7ln'
 echo $FILE
-yum -y install yum
+yum -y install ftp 
 ftp -n $HOST <<END_SCRIPT
 quote USER $USER
 quote PASS $PASSWD
